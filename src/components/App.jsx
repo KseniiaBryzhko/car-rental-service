@@ -7,24 +7,15 @@ import Layout from 'components/Layout/Layout';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Route>
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+    </>
   );
 };

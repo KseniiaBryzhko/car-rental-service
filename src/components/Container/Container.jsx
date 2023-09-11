@@ -1,17 +1,8 @@
-const Container = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      children
-    </div>
-  );
+import React from 'react';
+import { MainContainer } from './Container.styled';
+
+const Container = ({ children }) => {
+  return <MainContainer>{children}</MainContainer>;
 };
+
 export default Container;

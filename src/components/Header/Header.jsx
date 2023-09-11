@@ -1,19 +1,14 @@
 import Navigation from 'components/Navigation/Navigation';
+import Container from 'components/Container/Container';
+import { AppHeader } from './Header.styled';
 
 const Header = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      <Navigation />
-    </div>
+    <AppHeader>
+      <Container>
+        <Navigation />
+      </Container>
+    </AppHeader>
   );
 };
 
