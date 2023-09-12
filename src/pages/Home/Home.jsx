@@ -1,21 +1,40 @@
 import {
   HomeWrapper,
   CarImage,
-  ContentWrapper,
+  LeftContentWrapper,
+  RightContentWrapper,
   Title,
   SubTitle,
   Text,
+  List,
+  ListItem,
 } from './Home.styled';
 import Container from 'components/Container/Container';
 
 import car from 'images/car.png';
+import car2 from 'images/car2.png';
 
 const Home = () => {
   return (
     <Container>
       <HomeWrapper>
-        <CarImage src={car} alt="blue car" />
-        <ContentWrapper>
+        <LeftContentWrapper>
+          <CarImage src={car} alt="blue car" />
+          <SubTitle>Why us?</SubTitle>
+          <List>
+            <ListItem>Wide Selection</ListItem>
+            <ListItem>Affordable Rates</ListItem>
+            <ListItem>Convenience</ListItem>
+            <ListItem>Safety First</ListItem>
+            <ListItem>Support</ListItem>
+            <ListItem>24/7 Flexibility</ListItem>
+            <ListItem>Explore with Confidence</ListItem>
+          </List>
+          <SubTitle>Welcome to Car Rental Service –</SubTitle>
+          <SubTitle>where every mile is a memory!</SubTitle>
+        </LeftContentWrapper>
+
+        <RightContentWrapper>
           <SubTitle>Discover the freedom of the open road at</SubTitle>
           <Title>Car Rental Service!</Title>
           <Text>We're dedicated to making your journey extraordinary.</Text>
@@ -23,18 +42,9 @@ const Home = () => {
             Whether you're embarking on a business trip, family vacation, or
             just need a reliable ride, we've got you covered.
           </Text>
-          <SubTitle>Why us?</SubTitle>
-          <ul>
-            <li>Wide Selection</li>
-            <li>Affordable Rates</li>
-            <li>Convenience</li>
-            <li>Safety First</li>
-            <li>Support</li>
-            <li>24/7 Flexibility</li>
-            <li>Explore with Confidence</li>
-          </ul>
-          <p>Welcome to Car Rental Service – Where Every Mile is a Memory!</p>
-        </ContentWrapper>
+
+          <CarImage src={car2} alt="light blue car" />
+        </RightContentWrapper>
       </HomeWrapper>
     </Container>
   );

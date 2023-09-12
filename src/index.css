@@ -3,8 +3,10 @@
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 
-  background: linear-gradient(135deg, #c8c5d9, #d9d8d7);
+  background: linear-gradient(135deg, #aca7ca, #e6e5e4);
 
   overflow-x: hidden;
 
@@ -16,6 +18,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a,
