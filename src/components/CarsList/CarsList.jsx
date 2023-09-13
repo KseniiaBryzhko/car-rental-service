@@ -1,12 +1,13 @@
 import CarsItem from '../CarsItem/CarsItem';
+import { CarsGallery } from './CarsList.styled';
 
 const CarsList = ({ cars }) => {
   return (
-    <ul>
+    <CarsGallery>
       {cars.map(car => (
         <CarsItem key={cars.id} {...car} />
       ))}
-    </ul>
+    </CarsGallery>
   );
 };
 

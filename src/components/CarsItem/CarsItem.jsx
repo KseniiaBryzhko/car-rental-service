@@ -1,3 +1,17 @@
+import {
+  CarCard,
+  CarImageWrapper,
+  CarImage,
+  ContentWrapper,
+  MainContent,
+  SecondaryContent,
+  MainText,
+  MainTextModel,
+  SecondaryText,
+} from './CarsItem.styled';
+
+import Button from 'components/Button/Button';
+
 const CarsItem = ({
   model,
   make,
@@ -17,27 +31,42 @@ const CarsItem = ({
   rentalConditions,
   mileage,
 }) => {
+  const addressParts = address.split(', ');
+
   return (
     <>
-      <li key={id}>
-        <p>{model}</p>
-        <p>{make}</p>
-        <p>{year}</p>
-        <p>{rentalPrice}</p>
-        <p>{isFavorite}</p>
-        <p>{address}</p>
-        <p>{rentalCompany}</p>
-        <p>{functionalities}</p>
-        <p>{id}</p>
-        <p>{type}</p>
-        <p>{fuelConsumption}</p>
-        <p>{engineSize}</p>
-        <p>{description}</p>
-        <p>{accessories}</p>
-        <p>{rentalConditions}</p>
-        <p>{mileage}</p>
-        <img src={img} alt="car" />
-      </li>
+      <CarCard key={id}>
+        <CarImageWrapper>
+          <CarImage src={img} alt="car" />
+        </CarImageWrapper>
+        <ContentWrapper>
+          <MainContent>
+            <MainText>
+              {make}
+              <MainTextModel> {model}, </MainTextModel>
+              {year}
+            </MainText>
+            <MainText>{rentalPrice}</MainText>
+          </MainContent>
+          <SecondaryContent>
+            <SecondaryText>{addressParts[1]}</SecondaryText>
+            <SecondaryText>{addressParts[2]}</SecondaryText>
+            <SecondaryText>{rentalCompany}</SecondaryText>
+            <SecondaryText>{type}</SecondaryText>
+            <SecondaryText>{make}</SecondaryText>
+            <SecondaryText>{id}</SecondaryText>
+            <SecondaryText>{accessories[0]}</SecondaryText>
+          </SecondaryContent>
+          {/* <p>{isFavorite}</p>
+          <p>{fuelConsumption}</p>
+          <p>{engineSize}</p>
+          <p>{description}</p>
+          <p>{functionalities}</p>
+          <p>{rentalConditions}</p>
+          <p>{mileage}</p> */}
+        </ContentWrapper>
+        <Button>Learn more</Button>
+      </CarCard>
     </>
   );
 };
