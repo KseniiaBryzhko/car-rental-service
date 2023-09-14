@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+export const HeartStyled = component => styled(component)`
+  width: 18px;
+  height: 18px;
+`;
+
+export const FavoriteBtn = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
+
 export const LearnMoreBtn = styled.button`
   width: 100%;
   padding: 12px 0;
@@ -29,6 +43,7 @@ export const CarCard = styled.li`
 
 export const CarImageWrapper = styled.div`
   width: 100%;
+  position: relative;
 `;
 
 export const CarImage = styled.img`

@@ -9,11 +9,15 @@ const Catalog = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
+  // const [total, setTotal] = useState(0);
+  // const LIMIT = 8;
 
   useEffect(() => {
     (async () => {
       setIsLoading(true);
       try {
+        // const totalCars = await CarsService.getTotalCarCount();
+        // setTotal(totalCars);
         const cars = await CarsService.getCars(page);
         if (page === 1) {
           setCars(cars);
@@ -33,6 +37,9 @@ const Catalog = () => {
     setPage(prevPage => prevPage + 1);
   };
 
+  // let remains = Math.round(total / page);
+  // console.log(remains);
+
   return (
     <Container>
       <CatalogWrapper>
@@ -43,6 +50,11 @@ const Catalog = () => {
         ) : (
           <CarsList cars={cars} />
         )}
+        {/* {remains > LIMIT ? (
+          <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
+        ) : (
+          <p>Sorry, but that's all the cars we have for you at the moment.</p>
+        )} */}
         <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
       </CatalogWrapper>
     </Container>

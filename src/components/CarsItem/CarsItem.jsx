@@ -9,17 +9,23 @@ import {
   MainTextModel,
   SecondaryText,
   LearnMoreBtn,
+  HeartStyled,
+  FavoriteBtn,
 } from './CarsItem.styled';
 import { Modal } from '../Modal/Modal';
 import Card from '../Card/Card';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ReactComponent as WhiteHeart } from '../../images/whiteheart.svg';
+import { ReactComponent as BlueHeart } from '../../images/blueheart.svg';
+const WhiteHeartIcon = HeartStyled(WhiteHeart);
+const BlueHeartIcon = HeartStyled(BlueHeart);
 
 const CarsItem = ({
   model,
   make,
   year,
   rentalPrice,
-  isFavorite,
+  // isFavorite,
   address,
   rentalCompany,
   functionalities,
@@ -39,12 +45,55 @@ const CarsItem = ({
     setShowModal(!showModal);
   };
 
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+
+  // useEffect(() => {
+  //   console.log(favorites);
+  // }, [favorites]);
+
+  const addToFavorites = () => {
+    setIsFavorite(true);
+    setFavorites(prevFavorites => [
+      ...prevFavorites,
+      {
+        model,
+        make,
+        year,
+        rentalPrice,
+        isFavorite,
+        address,
+        rentalCompany,
+        functionalities,
+        id,
+        type,
+        img,
+        fuelConsumption,
+        engineSize,
+        description,
+        accessories,
+        rentalConditions,
+        mileage,
+      },
+    ]);
+  };
+
+  const removeFromFavorites = () => {
+    setIsFavorite(false);
+    setFavorites(favorites.filter(fav => fav.id !== id));
+  };
+
   const addressParts = address.split(', ');
 
   return (
     <>
       <CarCard key={id}>
         <CarImageWrapper>
+          <FavoriteBtn
+            onClick={!isFavorite ? addToFavorites : removeFromFavorites}
+          >
+            {!isFavorite ? <WhiteHeartIcon /> : <BlueHeartIcon />}
+          </FavoriteBtn>
           <CarImage src={img} alt="car" />
         </CarImageWrapper>
         <ContentWrapper>
@@ -65,13 +114,6 @@ const CarsItem = ({
             <SecondaryText>{id}</SecondaryText>
             <SecondaryText>{accessories[0]}</SecondaryText>
           </SecondaryContent>
-          {/* <p>{isFavorite}</p>
-          <p>{fuelConsumption}</p>
-          <p>{engineSize}</p>
-          <p>{description}</p>
-          <p>{functionalities}</p>
-          <p>{rentalConditions}</p>
-          <p>{mileage}</p> */}
         </ContentWrapper>
         <LearnMoreBtn onClick={toggleModal}>Learn more</LearnMoreBtn>
       </CarCard>
