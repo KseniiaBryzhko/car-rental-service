@@ -29,28 +29,29 @@ export const ContentWrapper = styled.div`
 export const MainContent = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 10px;
+`;
+
+export const MainText = styled.p`
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  margin-bottom: 8px;
+`;
+
+export const MainTextModel = styled.span`
+  color: #3470ff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
 `;
 
 export const SecondaryContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-`;
-
-export const MainText = styled.p`
-  color: #121417;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  margin-bottom: 8px;
-`;
-
-export const MainTextModel = styled.span`
-  color: #3470ff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
+  /* width: 300px; */
+  margin-bottom: 14px;
 `;
 
 export const SecondaryText = styled.p`
@@ -61,9 +62,56 @@ export const SecondaryText = styled.p`
   padding-right: 6px;
 `;
 
-export const LearnMoreBtn = styled.button`
-  width: 100%;
-  padding: 12px 0;
+export const DescriptionText = styled.p`
+  color: #121417;
+  font-size: 14px;
+  line-height: 1.43;
+  margin-bottom: 24px;
+`;
+
+export const AccessoriesTitle = styled.p`
+  color: #121417;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  margin-bottom: 8px;
+`;
+
+export const AccessoriesContent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+`;
+
+export const RentalText = styled.p`
+  padding: 7px 14px;
+  border-radius: 35px;
+  background: #f9f9f9;
+  color: #363535;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+`;
+
+export const RentalContent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+export const RentalInfo = styled.span`
+  color: #3470ff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+`;
+
+export const RentalBtn = styled.a`
+  padding: 12px 50px;
+  width: 168px;
   color: #ffffff;
   font-family: Manrope;
   font-size: 14px;

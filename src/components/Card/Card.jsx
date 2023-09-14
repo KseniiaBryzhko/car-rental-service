@@ -8,7 +8,13 @@ import {
   MainText,
   MainTextModel,
   SecondaryText,
-  LearnMoreBtn,
+  DescriptionText,
+  AccessoriesTitle,
+  AccessoriesContent,
+  RentalContent,
+  RentalText,
+  RentalInfo,
+  RentalBtn,
 } from './Card.styled';
 
 const Card = ({
@@ -31,6 +37,7 @@ const Card = ({
   mileage,
 }) => {
   const addressParts = address.split(', ');
+  const rentalConditionsParts = rentalConditions.split('\n', 3);
 
   return (
     <>
@@ -49,23 +56,37 @@ const Card = ({
           <SecondaryContent>
             <SecondaryText>{addressParts[1]}</SecondaryText>
             <SecondaryText>{addressParts[2]}</SecondaryText>
-            <SecondaryText>{rentalCompany}</SecondaryText>
-            <SecondaryText>{type}</SecondaryText>
-            <SecondaryText>{make}</SecondaryText>
-            <SecondaryText>{id}</SecondaryText>
-            <SecondaryText>{accessories[0]}</SecondaryText>
-            <MainText>{rentalPrice}</MainText>
+            <SecondaryText>Id: {id}</SecondaryText>
+            <SecondaryText>Year: {year}</SecondaryText>
+            <SecondaryText>Type: {type}</SecondaryText>
+            <SecondaryText>Fuel Consumption: {fuelConsumption}</SecondaryText>
+            <SecondaryText>Engine Size: {engineSize}</SecondaryText>
           </SecondaryContent>
-          {/* <p>{isFavorite}</p>
-          <p>{fuelConsumption}</p>
-          <p>{engineSize}</p>
-          <p>{description}</p>
-          <p>{functionalities}</p>
-          <p>{rentalConditions}</p>
-          <p>{mileage}</p> */}
+          <DescriptionText>{description}</DescriptionText>
+          <AccessoriesTitle>Accessories and functionalities:</AccessoriesTitle>
+          <AccessoriesContent>
+            {accessories.map((accessory, index) => (
+              <SecondaryText key={index}>{accessory}</SecondaryText>
+            ))}
+            {functionalities.map((functionality, index) => (
+              <SecondaryText key={index}>{functionality}</SecondaryText>
+            ))}
+          </AccessoriesContent>
+          <AccessoriesTitle>Rental Conditions:</AccessoriesTitle>
+          <RentalContent>
+            <RentalText>{rentalConditionsParts[0]}</RentalText>
+            <RentalText>{rentalConditionsParts[1]}</RentalText>
+            <RentalText>{rentalConditionsParts[2]}</RentalText>
+            <RentalText>
+              Mileage: <RentalInfo>{mileage}</RentalInfo>
+            </RentalText>
+            <RentalText>
+              Price: <RentalInfo>{rentalPrice}</RentalInfo>
+            </RentalText>
+          </RentalContent>
+          {/* <p>{isFavorite}</p>*/}
         </ContentWrapper>
-        {/* <button onClick={toggleModal}>Learn more</button> */}
-        <LearnMoreBtn>Learn more</LearnMoreBtn>
+        <RentalBtn href="tel:+380730000000">Rental car</RentalBtn>
       </CarCard>
     </>
   );

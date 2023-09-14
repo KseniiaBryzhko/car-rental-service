@@ -15,7 +15,7 @@ export const Overlay = styled.div`
 
 export const ModalWindow = styled.div`
   width: 541px;
-  height: 752px;
+  /* height: 752px; */
   border-radius: 24px;
   background: #ffffff;
   position: relative;
@@ -27,6 +27,7 @@ export const CloseBtn = styled.button`
   right: 16px;
   border: none;
   background: none;
+  cursor: pointer;
 `;
 
 export const CloseIconStyled = component => styled(component)`
