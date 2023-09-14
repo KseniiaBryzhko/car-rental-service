@@ -1,7 +1,7 @@
-import { Btn } from './Button.styled';
+// import { Btn } from './Button.styled';
 
-const Button = ({ children }) => {
-  return <Btn>{children}</Btn>;
-};
+// const Button = ({ children }) => {
+//   return <Btn>{children}</Btn>;
+// };
 
-export default Button;
+// export default Button;

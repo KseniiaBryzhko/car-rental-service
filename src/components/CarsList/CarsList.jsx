@@ -5,7 +5,7 @@ const CarsList = ({ cars }) => {
   return (
     <CarsGallery>
       {cars.map(car => (
-        <CarsItem key={cars.id} {...car} />
+        <CarsItem key={car.id} {...car} />
       ))}
     </CarsGallery>
   );

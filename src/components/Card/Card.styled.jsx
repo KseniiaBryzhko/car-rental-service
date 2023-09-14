@@ -1,48 +1,29 @@
 import styled from 'styled-components';
 
-export const LearnMoreBtn = styled.button`
+export const CarCard = styled.div`
   width: 100%;
-  padding: 12px 0;
-  color: #ffffff;
-  font-family: Manrope;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.43;
-  border-radius: 12px;
-  background: #3470ff;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    background: #0b44cd;
-  }
-`;
-
-export const CarCard = styled.li`
-  width: 274px;
-  height: 426px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 40px;
 `;
 
 export const CarImageWrapper = styled.div`
-  width: 100%;
+  width: 461px;
+  height: 248px;
+  margin: 0 auto;
 `;
 
 export const CarImage = styled.img`
-  display: block;
-  width: 100%;
-  width: 274px;
-  height: 268px;
+  width: 461px;
+  height: 248px;
   border-radius: 14px;
 `;
 
 export const ContentWrapper = styled.div`
   width: 100%;
   padding-top: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 `;
 
 export const MainContent = styled.div`
@@ -78,4 +59,24 @@ export const SecondaryText = styled.p`
   line-height: 1.5;
   border-right: 1px solid rgba(18, 20, 23, 0.1);
   padding-right: 6px;
+`;
+
+export const LearnMoreBtn = styled.button`
+  width: 100%;
+  padding: 12px 0;
+  color: #ffffff;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  border-radius: 12px;
+  background: #3470ff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: #0b44cd;
+  }
 `;

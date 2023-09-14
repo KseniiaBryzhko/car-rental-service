@@ -9,28 +9,25 @@ const Catalog = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
-  const [prevPage, setPrevPage] = useState(0);
 
   useEffect(() => {
-    if (prevPage !== page) {
-      getCars(page);
-    }
-    setPrevPage(page);
-  }, [page, prevPage]);
-
-  const getCars = async page => {
-    setIsLoading(true);
-    try {
-      const cars = await CarsService.getCars(page);
-      console.log(cars);
-
-      setCars(prevCars => [...prevCars, ...cars]);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    (async () => {
+      setIsLoading(true);
+      try {
+        const cars = await CarsService.getCars(page);
+        if (page === 1) {
+          setCars(cars);
+        } else {
+          setCars(prevState => [...prevState, ...cars]);
+        }
+        console.log(cars);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, [page]);
 
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
