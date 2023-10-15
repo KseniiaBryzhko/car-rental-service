@@ -4,6 +4,7 @@ import Catalog from 'pages/Catalog/Catalog';
 import Favorites from 'pages/Favorites/Favorites';
 import NotFound from 'pages/NotFound/NotFound';
 import Layout from 'components/Layout/Layout';
+import { isMobile } from 'react-device-detect';
 
 export const App = () => {
   if (isMobile) {
