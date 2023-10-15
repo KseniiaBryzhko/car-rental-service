@@ -14,7 +14,7 @@ import {
 } from './CarsItem.styled';
 import { Modal } from '../Modal/Modal';
 import Card from '../Card/Card';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ReactComponent as WhiteHeart } from '../../images/whiteheart.svg';
 import { ReactComponent as BlueHeart } from '../../images/blueheart.svg';
 const WhiteHeartIcon = HeartStyled(WhiteHeart);
