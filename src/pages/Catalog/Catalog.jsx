@@ -2,6 +2,7 @@ import CarsList from 'components/CarsList/CarsList';
 import { useState, useEffect } from 'react';
 import * as CarsService from 'service/cars-service';
 import Container from 'components/Container/Container';
+import Filters from 'components/Filters/Filters';
 import { CatalogWrapper, LoadMoreBtn } from './Catalog.styled';
 
 const Catalog = () => {
@@ -42,6 +43,7 @@ const Catalog = () => {
 
   return (
     <Container>
+      <Filters />
       <CatalogWrapper>
         {isLoading ? (
           <p>Loading...</p>

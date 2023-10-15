@@ -6,16 +6,24 @@ import NotFound from 'pages/NotFound/NotFound';
 import Layout from 'components/Layout/Layout';
 
 export const App = () => {
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
-  );
+  if (isMobile) {
+    return (
+      <div>
+        <p>На даному пристрої додаток недоступний.</p>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </>
+    );
+  }
 };
